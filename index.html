@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓝牙摇骰子 V1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>蓝牙摇骰子 V1</h1>
+
+        <div id="roleSelection">
+            <button id="btnBecomeHost">成为主机</button>
+            <button id="btnBecomeClient">成为客户端</button>
+        </div>
+
+        <div id="gameArea" style="display:none;">
+            <p>你的角色: <span id="myRole"></span></p>
+            <p>状态: <span id="status">等待操作...</span></p>
+
+            <div class="dice-area">
+                <h3>你的骰子 (<span id="myPlayerName"></span>):</h3>
+                <div id="myDice" class="dice-container">
+                    <span class="dice">?</span>
+                    <span class="dice">?</span>
+                </div>
+                <p>总点数: <span id="myScore">0</span></p>
+            </div>
+
+            <div class="dice-area">
+                <h3>对方的骰子 (<span id="opponentPlayerName"></span>):</h3>
+                <div id="opponentDice" class="dice-container">
+                    <span class="dice">?</span>
+                    <span class="dice">?</span>
+                </div>
+                <p>总点数: <span id="opponentScore">0</span></p>
+            </div>
+
+            <button id="btnRollDice" disabled>摇骰子</button>
+            <button id="btnRestartGame" style="display:none;">再玩一局 (仅主机)</button>
+        </div>
+
+        <div id="historyArea" style="display:none;">
+            <h2>游戏历史 (仅主机可见)</h2>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
